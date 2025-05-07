@@ -1,0 +1,513 @@
+/*  
+==================================================  
+작업 정보  
+--------------------------------------------------  
+작업자: 장가영  
+작업일: 2025-03-20  
+작업 내용: 레이아웃 스타일 작업
+==================================================  
+*/
+@import "mixin";
+@import "variables";
+@import "utilities";
+@import "root";
+
+body {
+    font-size: 1.6rem;
+}
+
+.layoutCenter {
+    display: block;
+    position: relative;
+    width: 1332px;
+    min-width: 360px;
+    max-width: 1332px;
+    margin: 0 auto;
+    padding: 0 30px;
+};
+
+@media (max-width: 1332px) {
+    .layoutCenter {
+      width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+	.layoutCenter {
+
+		padding: 0 17px;
+        .hide-m {
+            display: none !important;
+        }
+	}
+};
+
+#wrHeader {
+    background-color: $bg-blk;
+    color: #fff;
+    height: 100px;
+    .layoutCenter {
+        display: flex;
+
+        justify-content: space-between;
+    }
+    .bwContents {
+        height: 100%;
+        .bwLangBtn {
+            position: relative;
+            .langBtn {
+                color: rgba($color: #fff, $alpha: 0.3);
+            }
+            .btnKor {
+                &::after {
+                    @include mixin-pseudo(1.6rem, 2.4rem,"|");
+                    bottom: 0;
+                    right: 3.2rem;
+                    color: rgba($color: #fff, $alpha: 0.3);
+                }
+            }
+            .active {
+                color: #fff;
+                background-color: rgba($color: #fff, $alpha: 0.15);
+                border-radius: 0.4rem;
+                padding: 0.6rem 1.2rem;
+
+            }
+        }
+    }
+}
+
+#wrContents {
+    #bwMainVisual {
+        position: relative;
+        height: 838px;
+        z-index: 3;
+    }
+    .bxMainVisual{
+        width: 100%;
+        height: 100%;
+        background: url("/GFCKorea/images/mainVisualBg1.jpg") center no-repeat;
+        .mainTit {
+            color: #fff;
+            font-family: "Cinzel", serif !important;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+        }
+    }
+}
+
+#bwRollingBanner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 150px;
+    background-color: #fff;
+    position: relative;
+    z-index: 2;
+    box-shadow: 15px 15px 30px 4px #CECECE;
+    .rollingBannerItm {
+        height: 100%;
+        
+    }
+    .bxRollingBanner {
+        .rollingBanner {
+            overflow: hidden;
+            height: 100%;
+            .swiper-wrapper {
+                height: 100%;
+            }
+        }
+    }
+}
+
+main {
+    .section01 {
+        background-color: #fff;
+        .grid-container {
+            @include mixin-grid-3;
+            .flex {
+                gap: 2rem;
+            }
+            .grid-itm {
+                &_tit {
+                    color: $sub;
+                    font-size: 1.8rem;
+                    font-weight: bold;
+                }
+                &_num {
+                    font-size: 11rem;
+                    font-weight: bold;
+                }
+                &_detail {
+                    color: $main;
+                    font-size: 4.5rem;
+                }
+            }
+        }
+    }
+    .section02 {
+        background-color: #EEEEEE;
+        .article-1 {
+            .flex-container {
+                @include mixin-flex(row, center, center);
+                gap: 5.3rem;
+                &_itm {
+                    width: 25%;
+                    height: 28rem;
+                }
+            }
+            .cont-box {
+                &_itm {
+                    @include mixin-flex(column, stretch, center);
+                    &__bxIcon {
+                        @include mixin-flex(row, space-evenly, center);
+                    }
+                }
+            }
+        }
+        .article-2 {
+            > .flex-container {
+                @include mixin-flex(row, space-between, center); 
+                padding-bottom: 14.5rem;
+                gap: 6.8rem;
+                .card {
+                    width: 33%;
+                    height: 35.5rem;
+                    &_btn {
+                        &__img {
+                            width: 2.25rem;
+                            height: 0.45rem;
+                            margin-left: 0.8rem;
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #bwSbBanner {
+        height: 428px;
+        .bxSbBanner {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background: url("/GFCKorea/images/sbBannerBg1.jpg") bottom no-repeat;
+            background-size: cover;
+            padding: 6.57rem;
+            .layoutCenter {
+                text-align: center;
+            }
+            .sbBannerTit {
+                display: block;
+                width: 100%;
+                padding-bottom: 4rem;
+            }
+            .btn {
+                @include mixin-btn{
+                    padding: 1.6rem 1.9rem;
+                };
+            }
+        }
+    }
+}
+
+
+#wrFooter {
+    margin-top: 9.2rem;
+    margin-bottom: 9.2rem;
+    .layoutCenter {
+        display: flex;
+        flex-direction: column;
+        li, a, span {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+/* 서브페이지 - company */
+#sbWrap {
+    #wrHeader {
+        background-color: #fff;
+        color: #222;
+        .btnKor {
+            &::after {
+                color: rgba(157, 157, 157, 0.55);
+            }
+        }
+        .langBtn {
+            color: #222;
+        }
+        .active {
+            background-color: rgba(157, 157, 157, 0.15);
+            border-radius: 0.4rem;
+            padding: 0.6rem 1.2rem;
+        }
+    }
+    .wrSbHeader {
+        .flex-container {
+            @include mixin-flex(row, center, center){
+                gap: 11rem;
+            };
+        }
+    }
+    #bwSbMainVisual {
+        background: url('/GFCKorea/images/sbMainVisualBg.jpg') center top no-repeat;
+    }
+    .bwSbMainVisual {
+        .main-tit {
+            padding-top: 24.4rem;
+            
+            #typed {
+                /*border-right: 2px solid #00BFFF; */
+                animation: blink 0.7s infinite;
+                white-space: nowrap;
+                overflow: hidden;
+                display: inline-block;
+            }
+
+            @keyframes blink {
+                0%, 100% { border-color: transparent; }
+                50% { border-color: #00BFFF; }
+            }
+            &_sb {
+                padding-bottom: 22.3rem;
+            }
+        }
+    }
+    .section01 {
+        .layout-circle {
+            @include mixin-flex(row, center, center);
+            &_itm {
+                @include mixin-circle-3{
+                    padding: 13rem;
+                };
+            }
+        }
+        .flex-container {
+            position: relative;
+            margin: 0 auto;
+            width: 100%;
+            height: 73rem;
+        }
+        .text-img {
+            position: absolute;
+            width: 100rem;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            > span {
+                display: block;
+                margin-bottom: 1rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 2.5rem;
+                line-height: 1.2;
+                > b {
+                    color: $main;
+                }
+            }
+            > img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .circle-menu {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            z-index: 3;
+            &_itm {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform-origin: center center;
+                text-align: center;
+                width: 15rem;
+                height: 50px;
+                margin: -25px 0 0 -50px;
+                color: $main;
+                font-size: 2.8rem;
+                &:nth-child(1) {transform: rotate(6deg) translate(50rem) rotate(-6deg);}
+                &:nth-child(2) {transform: rotate(30deg) translate(50rem) rotate(-30deg);}
+                &:nth-child(3) {transform: rotate(148deg) translate(50rem) rotate(-148deg);}
+                &:nth-child(4) {transform: rotate(173deg) translate(50rem) rotate(-173deg);}
+                &:nth-child(5) {transform: rotate(198deg) translate(50rem) rotate(-198deg);}
+                &:nth-child(6) {transform: rotate(320deg) translate(50rem) rotate(-320deg);}
+                &:nth-child(7) {transform: rotate(341deg) translate(50rem) rotate(-341deg);}
+            }
+        }
+    }
+    .section02 {
+        background-color: #F5F9F9;
+        .grid-container {
+            &_itm {
+                @include mixin-flex(row, center, center);
+            }
+            @include mixin-grid-2;
+            gap: 2rem;
+            .flex-container {
+                @include mixin-flex(row, space-between, center){
+                    gap: 5rem;
+                }
+                &_itm {
+                    flex: 1;
+                    text-align: center;
+                }
+            }
+            .box1 {
+                grid-column:  1 / -1;
+            }
+            .box2 {
+                grid-column: span 1;
+            }
+        }
+        #chart {
+            max-width: 380px;
+            margin: 0 auto;
+        }
+    }
+    .section03 {
+        .flex-container {
+            @include mixin-flex(column, space-between, center){
+            }
+        }
+    }
+    .section04 {
+        background-color: #F5F9F9;
+        .sb-tit {
+            padding-top: 0;
+            color: $sub;
+        }
+        .bwRollingBanner {
+            padding-left: 50rem;
+        }
+        .bxSbBanner {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            gap: 3rem;
+        }
+        .swiper-slide {
+            position: relative;
+            width: 36rem;
+            height: 43rem;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .banner-prev, .banner-next{
+            width: 5.2rem;
+            height: 5.2rem;
+            background-color: transparent;
+            border: 1px solid $main;
+            border-radius: 100%;
+            mask: url('/GFCKorea/images/arrow.svg') no-repeat center;
+            -webkit-mask: url('/GFCKorea/images/arrow.svg') no-repeat center;
+            mask-size: 50%;
+            -webkit-mask-size: 50%;
+            &::after {
+                content: none;
+            }
+            &:hover {
+                background-color: $main;
+                
+            }        
+        }
+        .flex {
+            justify-content: space-between;
+        }
+        .swiper-btn-box {
+            position: relative;
+            display: flex;
+            gap: 2rem; /* 버튼 간 간격 */
+            border: 1px solid red;
+            .banner-prev,
+            .banner-next {
+                position: relative;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .banner-prev {
+            transform: scaleX(-1);
+            position: absolute;
+        }
+        .banner-next {
+            &::after {
+                content: none;
+            }
+        }
+    }
+    .section05 {
+        .flex-container {
+            @include mixin-flex(row, space-between, center){
+            }
+            &_itm {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8rem;
+            }
+            .bxList {
+                width: 35%;
+                margin-right: 3rem;
+            }
+            .locate_map {
+                width: 40%;
+                &__itm {
+                    border-radius: 0 0 10rem 0;
+                }
+            }
+        }
+    }
+    .flex-container {
+        &_img {
+            position: relative;
+        }
+        &_itm {
+            display: inline-block;
+        }
+    }
+}
+.product-sb {
+    .flex-container {
+        position: relative;
+        &_itm {
+            position: absolute;
+
+            color: $sub;
+            font-size: 2.5rem;
+            &.left {
+                top: 66%;
+                left: -14%;
+                transform: translateY(-50%);
+            }
+            &.right {
+                top: 55%;
+                right: -20%;
+                transform: translate(-50%);
+            }
+            &.bottom {
+                bottom: -20%;
+                left: 50%;
+                transform: translateX(-50%);
+                text-align: center;
+            }
+        }
+    }
+}
+
+

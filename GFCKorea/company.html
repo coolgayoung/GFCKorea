@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 라이브러리 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- 250407 추가 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-apexcharts"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+    <title>지에프씨코리아</title>
+    
+    <!-- <link rel="stylesheet" href="/GFCKorea/css/import.css"> -->
+    <link rel="stylesheet" href="/GFCKorea/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    
+    <!-- JS 라이브러리 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/GFCKorea/js/jquery-3.7.1.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- my script -->
+    <script src="/GFCKorea/js/script.js"></script>
+</head>
+<body>
+    <div id="body">
+        <div class="wrap sbWrap" id="sbWrap">
+            <!-- [s] header -->
+            <header id="wrHeader" class="">
+                <div class="bwContents flex items-center layoutCenter">
+                    <div class="flex gap-10 items-center">
+                        <h1 class="text-3xl font-bold underline">
+                            <a href="/GFCKorea/index.html"><img src="/GFCKorea/images/gf_on_logo.png" alt="지에프씨코리아"></a>
+                        </h1>
+                        <ul class="flex gap-10 hide-m">
+                            <li><a href="/GFCKorea/company.html">COMPANY</a></li>
+                            <li><a href="/GFCKorea/product_solutions.html">PRODUCT</a></li>
+                            <li><a href="#">PORTFOLIO</a></li>
+                            <li><a href="#">OUR TEAM</a></li>
+                        </ul>
+                    </div>
+                    <ul class="bwLangBtn flex gap-10">
+                        <li><a id="btnKor" class="btnKor langBtn active" href="#">KOR</a></li>
+                        <li><a id="btnEng" class="btnEng langBtn" href="#">ENG</a></li>
+                    </ul>
+                </div>
+            </header>
+            <!-- [e] header -->
+
+                        
+            <div id="wrContents" class="bxWrap">
+                <div class="bwContents bwMainContent" id="bwContents">
+                    <div id="bwSbMainVisual" class="bwSbMainVisual">
+                        <div class="layoutCenter">
+                            <h2 class="main-tit">
+                                <span id="typed">
+                                    <b>GFCKorea</b>는 <b>고객 맞춤형 IT 서비스 제공을 목표</b>로, 
+                                    <br><b>안정적인 시스템 구축</b>을 통해 <b>지속 가능한 성장</b>을 지원합니다.
+                                </span>
+                            </h2>
+                            <p class="main-tit_sb">기획부터 구축, 운영까지 책임지는 통합 서비스를 통해 비즈니스 경쟁력을 한 단계 높여드립니다.</p>
+                        </div>
+                    </div>
+                    <section class="section section01">
+                        <div class="layoutCenter">
+                            <h2 class="tit">GFCKorea’s ADVANTAGE</h2>
+                            <ul class="layout-circle">
+                                <li class="layout-circle_itm" data-aos="fade-up" data-aos-duration="500">다양한 분야<br>수행경험</li>
+                                <li class="layout-circle_itm" data-aos="fade-up" data-aos-duration="1000">전문인력<br>지원 체계</li>
+                                <li class="layout-circle_itm" data-aos="fade-up" data-aos-duration="1600">프로젝트<br>Risk 관리</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="section section02">
+                        <div class="layoutCenter">
+                            <h2 class="tit">Human Resources</h2>
+                            <div class="grid-container">
+                                <div class="grid-container_itm cont-box flex-container box1" data-aos="fade-up" data-aos-duration="500">
+                                    <table class="flex-container_itm table">
+                                        <caption class="sr-only">지에프씨코리아 인재현황 표</caption>
+                                        <thead>
+                                            <tr class="table_cate">
+                                                <th class="table_cate__th">구분</th>
+                                                <th class="table_cate__th">백분율</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="table_cont">
+                                                <td>프로젝트 관리자</td>
+                                                <td>10%</td>
+                                            </tr>
+                                            <tr class="table_cont">
+                                                <td>IT 컨설턴트</td>
+                                                <td>10%</td>
+                                            </tr>
+                                            <tr class="table_cont">
+                                                <td>아키텍처(SW/시스템)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr class="table_cont">
+                                                <td>SW개발 시스템 운영</td>
+                                                <td>60%</td>
+                                            </tr>
+                                            <tr class="table_total">
+                                                <td>총계</td>
+                                                <td>100%</td>
+                                            </tr>
+                                        </tbody>
+                                        
+                                    </table>
+                                    <div id="app" class="flex-container_itm">
+                                        <div id="chart">
+                                            <apexchart type="pie" width="380" :options="chartOptions" :series="series"></apexchart>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid-container_itm cont-box" data-aos="fade-up" data-aos-duration="500"><img src="/GFCKorea/images/img03.png" alt="지에프씨코리아 인적자원 표"></div>
+                                <div class="grid-container_itm cont-box" data-aos="fade-up" data-aos-duration="500"><img src="/GFCKorea/images/img04.png" alt="지에프씨코리아 인적자원 조직도"></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="section section03" data-aos="fade-up" data-aos-duration="400">
+                        <div class="layoutCenter">
+                            <h2 class="tit">Business Experience</h2>
+                            <div class="flex-container">
+                                <img src="/GFCKorea/images/business_experience.png" alt="">
+                                <a href="#" class="btn-long">더보기</a>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="section section04" data-aos="fade-up" data-aos-duration="400">
+                        <div class="layoutCenter">
+                            <h2 class="tit">인증 및 등록</h2>
+                            <div class="flex">
+                                <h3 class="sb-tit">우리는 우리의 가치로 가치를<br> 증명하는 지에프씨코리아입니다.</h3>
+                                <div class="swiper-btn-box">
+                                    <div class="swiper-button-prev banner-prev"><img src="/GFCKorea/images/arrow.svg" alt="이전" class="banner-prev_icon"><span class="sr-only">이전</span></div>
+                                    <div class="swiper-button-next banner-next"><img src="/GFCKorea/images/arrow.svg" alt="다음" class="banner-next_icon"><span class="sr-only">다음</span></div>
+                                </div>
+                            </div>
+                            <div class="bwRollingBanner" id="">
+                                <div class="bxRollingBanner">
+                                    <div class="swiper rollingCardBanner">
+                                        <ul class="swiper-wrapper">
+                                            <li class="swiper-slide"><img src="/GFCKorea/images/certi1.png" alt="중소기업 확인서"></li>
+                                            <li class="swiper-slide"><img src="/GFCKorea/images/certi1.png" alt="중소기업 확인서"></li>
+                                            <li class="swiper-slide"><img src="/GFCKorea/images/certi1.png" alt="중소기업 확인서"></li>
+                                            <li class="swiper-slide"><img src="/GFCKorea/images/certi1.png" alt="중소기업 확인서"></li>
+                                            <li class="swiper-slide"><img src="/GFCKorea/images/certi1.png" alt="중소기업 확인서"></li>
+                                            <li class="swiper-slide"><img src="/GFCKorea/images/certi1.png" alt="중소기업 확인서"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="section section05" data-aos="fade-up" data-aos-duration="400">
+                        <div class="layoutCenter">
+                            <h2 class="tit">위치 안내</h2>
+                            <div class="flex-container">
+                                <div class="flex-container_itm">
+                                    <div class="bxList">
+                                        <h4>Business Inquiries</h4>
+                                        <ul class="bxList-itm">
+                                            <li>gfckorea8305@gmail.com</li>
+                                            <li>010-8074-2690</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bxList">
+                                        <h4>Technical Inquiries</h4>
+                                        <ul class="bxList-itm">
+                                            <li>bmahn@hanmail.net</li>
+                                            <li>010-4233-2690</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bxList">
+                                        <h4>Administrative Inquiries</h4>
+                                        <ul class="bxList-itm">
+                                            <li>gfckorea8305@gmail.com</li>
+                                            <li>010-8074-2690</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bxList">
+                                        <h4>Transportation</h4>
+                                        <ul class="bxList-itm">
+                                            <li>지하철
+                                                <ul>
+                                                    <li>1호선, 7호선 가산디지털단지역<br>8, 9, 10번 출구 도보 10분 거리</li>
+                                                </ul>
+                                            </li>
+                                            <li>버스
+                                                <ul>
+                                                    <li>청색 : 571, 652, 653</li>
+                                                    <li>녹색 : 5012, 5528 (462)</li>
+                                                    <li>마을버스 : 금천 05</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="flex-container_itm locate_map">
+                                    <iframe class="locate_map__itm" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.1938673731524!2d126.87447337642745!3d37.47975122909905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b61fc8df9b59d%3A0x22bd7e78f1e72d65!2z7ISc7Jq47Yq567OE7IucIOq4iOyynOq1rCDshJzrtoDsg5vquLggNjA2!5e0!3m2!1sko!2skr!4v1745808376587!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- [s] footer -->
+            <div id="wrFooter" class="wrFooter bg-white">
+                <div class="layoutCenter gap-3">
+                    <div id="bwLogoFooter" class="bwLogoFooter">
+                        <img src="/GFCKorea/images/gf_on_logo.png" alt="지에프씨코리아">
+                    </div>
+                    <ul class="bwMenuFooter flex gap-5 ">
+                        <li><a href="#">사업제안</a></li>
+                        <li><a href="#">회사개요</a></li>
+                        <li><a href="#">회사소개서 다운로드</a></li>
+                        <li><a href="#">찾아오시는 길</a></li>
+                    </ul>
+                    <ul class="bwInfoFooter flex gap-5">
+                        <li>상호명: (주)지에프씨코리아</li>
+                        <li>주소: 서울특별시 금천구 서부샛길 606, B동 1611-1호</li>
+                    </ul>
+                    <ul class="bwInfoFooter flex gap-5">
+                        <li>사업자 등록번호: 135-81-88617</li>
+                        <li>직업정보등록번호: 서울청 제2015-2호</li>
+                    </ul>
+                    <ul class="bwInfoFooter flex gap-5">
+                        <li>TEL: 02-707-3361</li>
+                        <li>FAX: 02-6280-3379</li>
+                        <li>MAIL: gfckorea1111@gmail.com</li>
+                    </ul>
+                    <span class="text-gray-500">Copyright@ 2014 GFCKOREA All Right Reserved.</span>
+                </div>
+            </div>
+            <!-- [e] footer -->            
+        </div>
+    </div>
+    <script>
+        new Vue({
+        el: '#app',
+        components: {
+        apexchart: VueApexCharts,
+        },
+        data: {
+        series: [10, 10, 10, 60],
+        chartOptions: {
+            chart: {
+            width: 380,
+            type: 'pie',
+            },
+            labels: ['아키텍처', '프로젝트 관리사', 'IT 컨설턴트', 'S/W개발 시스템운영'],
+            responsive: [{
+            breakpoint: 480,
+            options: {
+                chart: {
+                width: 200
+                },
+                legend: {
+                position: 'bottom'
+                }
+            }
+            }]
+        },
+        },
+        })
+    </script>
+    <!--
+    <script>
+        var typed = new Typed('#typed', {
+        strings: [
+        "GFCKorea는 고객 맞춤형 IT 서비스 제공을 목표로,", 
+        "안정적인 시스템 구축을 통해 지속 가능한 성장을 지원합니다."
+        ],
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 1000,
+        startDelay: 500,
+        loop: true
+        });
+    </script>
+    -->
+</body>
+</html>

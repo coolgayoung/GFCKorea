@@ -16,6 +16,13 @@ $bg-blk : #222;
     b {
         font-weight: bold;
     }
+    &__center {
+        color: #fff;
+        font-size: 5rem;
+        font-weight: 300;
+        letter-spacing: -2px;
+        padding: 16rem 0;
+    }
 }
 .sb-tit {
     color: $main;

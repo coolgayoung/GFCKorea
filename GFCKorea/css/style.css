@@ -22,6 +22,13 @@
 .main-tit b {
   font-weight: bold;
 }
+.main-tit__center {
+  color: #fff;
+  font-size: 5rem;
+  font-weight: 300;
+  letter-spacing: -2px;
+  padding: 16rem 0;
+}
 
 .sb-tit {
   color: #00735E;
@@ -320,13 +327,6 @@ body {
   height: 100%;
   background: url("/GFCKorea/images/mainVisualBg1.jpg") center no-repeat;
 }
-#wrContents .bxMainVisual .mainTit {
-  color: #fff;
-  font-family: "Cinzel", serif !important;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-}
 
 #bwRollingBanner {
   display: flex;
@@ -447,7 +447,8 @@ main #bwSbBanner .bxSbBanner .btn {
 }
 
 #wrFooter {
-  margin-top: 9.2rem;
+  border-top: 1px solid #ddd;
+  padding-top: 9.2rem;
   margin-bottom: 9.2rem;
 }
 #wrFooter .layoutCenter {
@@ -754,4 +755,72 @@ main #bwSbBanner .bxSbBanner .btn {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+.card-grid .card-grid_itm {
+  perspective: 1000px;
+}
+.card-grid .card-grid_itm__inner {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+.card-grid .card-grid_itm:hover .card-grid_itm__inner {
+  transform: rotateY(180deg);
+}
+.card-grid .card-front, .card-grid .card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.card-grid .card-front {
+  background-color: #fff;
+  border: 1px solid #00735E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  z-index: 2;
+}
+.card-grid .card-logo {
+  max-width: 80%;
+  max-height: 80%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.card-grid .card-back {
+  background-color: #00735E;
+  color: #fff;
+  transform: rotateY(180deg);
+  padding: 2rem 4.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.card-grid .card-back .card-tit {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.card-grid .card-back .card-desc {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+.card-grid .card-back .card-date {
+  font-size: 1.6rem;
+  font-weight: 300;
 }

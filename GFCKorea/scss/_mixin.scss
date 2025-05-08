@@ -40,7 +40,12 @@
     grid-template-rows: repeat(2, 1fr);
     padding-bottom: 14.5rem;
 } 
-
+@mixin mixin-grid-custom ($columns: 3, $rows: 2){
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    grid-template-rows: repeat($rows, 1fr);
+    @content;
+}
 
 @mixin mixin-flex ($fd: row, $jc: center, $ai: center) {
     display: flex;

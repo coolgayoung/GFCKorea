@@ -557,7 +557,6 @@ main #bwSbBanner .bxSbBanner .btn {
 }
 #sbWrap .bwSbMainVisual .main-tit #typed {
   /*border-right: 2px solid #00BFFF; */
-  animation: blink 0.7s infinite;
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
@@ -822,6 +821,243 @@ main #bwSbBanner .bxSbBanner .btn {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
+}
+
+.section-locate .map-container {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.section-locate .map-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.section-locate .point {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00c853;
+  animation: blink 1.2s infinite;
+  z-index: 1;
+  cursor: pointer;
+}
+.section-locate .point:hover {
+  background-color: #00c853;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+  z-index: 2;
+}
+.section-locate .label {
+  position: absolute;
+  background-color: #fff;
+  color: #333;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  cursor: pointer;
+}
+.section-locate .label:hover {
+  background-color: #00c853;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+  z-index: 2;
+}
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.section-locate .p1 {
+  top: 20%;
+  left: 94%;
+}
+.section-locate .p2 {
+  top: 35%;
+  left: 1%;
+}
+.section-locate .p3 {
+  top: 40%;
+  left: 7%;
+}
+.section-locate .p4 {
+  top: 53%;
+  left: 8%;
+}
+.section-locate .p5 {
+  top: 84%;
+  left: 9%;
+}
+.section-locate .p6 {
+  top: 28%;
+  left: 6%;
+}
+.section-locate .p7 {
+  top: 40%;
+  left: 25%;
+}
+.section-locate .p8 {
+  top: 44%;
+  left: 20%;
+}
+.section-locate .p9 {
+  top: 38%;
+  left: 13%;
+}
+.section-locate .p10 {
+  top: 55%;
+  left: 21%;
+}
+.section-locate .p11 {
+  top: 51%;
+  left: 19%;
+}
+.section-locate .p12 {
+  top: 59%;
+  left: 28%;
+}
+.section-locate .p13 {
+  top: 35%;
+  left: 30%;
+}
+.section-locate .p14 {
+  top: 67%;
+  left: 38%;
+}
+.section-locate .p15 {
+  top: 28%;
+  left: 70%;
+}
+.section-locate .p16 {
+  top: 45%;
+  left: 73%;
+}
+.section-locate .p17 {
+  top: 60%;
+  left: 80%;
+}
+.section-locate .p18 {
+  top: 68%;
+  left: 80%;
+}
+.section-locate .p19 {
+  top: 78%;
+  left: 82%;
+}
+.section-locate .p1-label {
+  top: 20%;
+  left: 98%;
+  animation-delay: 0.2s;
+}
+.section-locate .p2-label {
+  top: 33%;
+  left: 5%;
+  animation-delay: 0.4s;
+}
+.section-locate .p3-label {
+  top: 38%;
+  left: 11%;
+  animation-delay: 0.6s;
+}
+.section-locate .p4-label {
+  top: 51%;
+  left: 12%;
+  animation-delay: 0.8s;
+}
+.section-locate .p5-label {
+  top: 82%;
+  left: 13%;
+  animation-delay: 1s;
+}
+.section-locate .p6-label {
+  top: 22%;
+  left: 11%;
+  animation-delay: 1.2s;
+}
+.section-locate .p7-label {
+  top: 38%;
+  left: 28%;
+  animation-delay: 1.4s;
+}
+.section-locate .p8-label {
+  top: 45%;
+  left: 23%;
+  animation-delay: 1.6s;
+}
+.section-locate .p9-label {
+  top: 36%;
+  left: 17%;
+  animation-delay: 1.8s;
+}
+.section-locate .p10-label {
+  top: 53%;
+  left: 24%;
+  animation-delay: 2s;
+}
+.section-locate .p11-label {
+  top: 49%;
+  left: 22%;
+  animation-delay: 2.2s;
+}
+.section-locate .p12-label {
+  top: 58%;
+  left: 31%;
+  animation-delay: 2.4s;
+}
+.section-locate .p13-label {
+  top: 33%;
+  left: 33%;
+  animation-delay: 2.6s;
+}
+.section-locate .p14-label {
+  top: 66%;
+  left: 41%;
+  animation-delay: 2.8s;
+}
+.section-locate .p15-label {
+  top: 26%;
+  left: 73%;
+  animation-delay: 3s;
+}
+.section-locate .p16-label {
+  top: 43%;
+  left: 76%;
+  animation-delay: 3.2s;
+}
+.section-locate .p17-label {
+  top: 58%;
+  left: 83%;
+  animation-delay: 3.4s;
+}
+.section-locate .p18-label {
+  top: 67%;
+  left: 83%;
+  animation-delay: 3.6s;
+}
+.section-locate .p19-label {
+  top: 76%;
+  left: 85%;
+  animation-delay: 3.8s;
 }
 
 .sb_bg {

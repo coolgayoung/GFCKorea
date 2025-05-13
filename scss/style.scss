@@ -106,7 +106,6 @@ body {
                 z-index: 1;
                 &:hover {
                     color: rgba(255, 255, 255, 0.6);
-                    // color: rgba(0, 115, 94, 1.0);
                     -ms-animation: circleOpacity forwards 1s;
                     -moz-animation: circleOpacity forwards 1s;
                     -webkit-animation: circleOpacity forwards 1s;
@@ -131,7 +130,6 @@ body {
             width: 100%;
             font-size: 0px;
             color: rgba(255, 255, 255, 0.6);
-            // color: rgba(0, 115, 94, 0.6);
             text-align: center;
             z-index: -1;
         }
@@ -384,7 +382,7 @@ main {
                 0%, 100% { border-color: transparent; }
                 50% { border-color: #00BFFF; }
             }
-            &_sb {
+            &_sb1 {
                 padding-bottom: 22.3rem;
             }
         }

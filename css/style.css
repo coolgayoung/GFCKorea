@@ -15,8 +15,17 @@
   letter-spacing: -2px;
 }
 .main-tit_sb {
+  color: #555;
+  font-size: 3rem;
+}
+.main-tit_sb1 {
   color: #95999C;
   font-size: 3rem;
+}
+.main-tit_sb2 {
+  color: #615f5f;
+  font-size: 3rem;
+  line-height: 1.6;
 }
 .main-tit b {
   font-weight: bold;
@@ -40,7 +49,6 @@
   color: #222;
   font-size: 5rem;
   font-weight: bold;
-  padding-top: 1.3rem;
   padding-bottom: 4rem;
 }
 
@@ -665,7 +673,7 @@ main #bwSbBanner .bxSbBanner .btn {
     border-color: #00BFFF;
   }
 }
-#sbWrap .bwSbMainVisual .main-tit_sb {
+#sbWrap .bwSbMainVisual .main-tit_sb1 {
   padding-bottom: 22.3rem;
 }
 #sbWrap .section01 .layout-circle {

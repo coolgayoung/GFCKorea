@@ -10,9 +10,17 @@ $bg-blk : #222;
     font-weight: 300;
     letter-spacing: -2px;
     &_sb {
-        // padding-top: 3rem;
+        color: $sub;
+        font-size: 3rem;
+    }
+    &_sb1 {
         color: $detail;
         font-size: 3rem;
+    }
+    &_sb2 {
+        color: #615f5f;
+        font-size: 3rem;
+        line-height: 1.6;
     }
     b {
         font-weight: bold;
@@ -34,14 +42,12 @@ $bg-blk : #222;
 
 .tit {
     @include mixin-tit;
-    padding-top: 1.3rem;
     padding-bottom: 4rem;
 }
 
 #sbWrap {
     .tit {
         @include mixin-tit;
-
     }
 }
 

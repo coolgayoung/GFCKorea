@@ -57,7 +57,7 @@
         background-color: darken($main, 10%);
         color: lighten(#fff, 10%);
         font-weight: bold;
-    }
+        }
     }
 }
 
@@ -145,11 +145,27 @@
     padding: 12rem 0;
 }
 
+.table-wrap {
+    display: block;
+    padding: 1rem;
+}
 .table {
+    width: 70%;
+    max-width: 600px;
+    margin: 0 auto;
     border-spacing: 1rem;
-    tr, th {
+    table-layout: fixed;
+    th,td {
         padding: 0.8rem 1.5rem;
+        text-align: center;
     }
+    th:first-child, td:first-child {
+        width: 60%;
+    }
+    th:last-child, td:last-child {
+        width: 40%;
+    }
+
     &_cate {
         color: #fff;
         &__th {
@@ -172,6 +188,12 @@
     @include mixin-btn($main, #fff){
         padding: 1.6rem 6.6rem;
         text-align: center;
+        transition: background-color 0.5s ease, color 0.5s ease, font-weight 0.3s ease;
+    }
+    &:hover {
+        background-color: darken($main, 10%);
+        color: lighten(#fff, 10%);
+        font-weight: bold;
     }
 }
 
@@ -187,6 +209,7 @@
     }
     .card-grid_itm {
         perspective: 1000px;
+        cursor: pointer;
         &__inner {
             position: relative;
             width: 100%;

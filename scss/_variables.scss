@@ -11,7 +11,7 @@ $bg-blk : #222;
     letter-spacing: -2px;
     &_sb {
         // padding-top: 3rem;
-        color: $sub;
+        color: $detail;
         font-size: 3rem;
     }
     b {
@@ -46,6 +46,9 @@ $bg-blk : #222;
 }
 
 .current-page {
+    color: $main;
+}
+.current-page_sb {
     color: $main;
     border-bottom: #00735E 5px solid;
 }

@@ -34,7 +34,6 @@ body {
 
 @media (max-width: 768px) {
 	.layoutCenter {
-
 		padding: 0 17px;
         .hide-m {
             display: none !important;
@@ -48,11 +47,118 @@ body {
     height: 100px;
     .layoutCenter {
         display: flex;
-
         justify-content: space-between;
     }
     .bwContents {
         height: 100%;
+        // .effect-31 {
+        //     a {
+        //         position: relative;
+        //         overflow: hidden;
+        //         display: block;
+        //         text-align: center;
+        //         flex-grow: 1;
+        //         -webkit-animation: 1s;
+        //         animation-duration: 1s;
+        //         -webkit-animation-fill-mode: both;
+        //         animation-fill-mode: both;
+        //         padding: 0;
+        //         &::after {
+        //             position: absolute;
+        //             top: 100%;
+        //             left: 0;
+        //             right: 0;
+        //             content: attr(data-hover);
+        //             display: inline;
+        //             text-align: center;
+        //             -webkit-transition: top 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        //             transition: top 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        //         }
+        //         &:hover {
+        //             color: $main;
+        //         }
+        //         &:hover span {
+        //             color: $main;
+        //             -webkit-transform: translateY(-100%);
+        //             transform: translateY(-100%);
+        //         }
+        //         &:hover::after {
+        //             top: 0;
+        //         }
+        //         &:active {
+        //             -webkit-animation-name: rubberBand;
+        //             animation-name: rubberBand;
+        //         }
+        //         span {
+        //             display: block;
+        //             -webkit-transition: -webkit-transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        //             transition: -webkit-transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        //             transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        //             transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55),
+        //             -webkit-transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        //         }
+        //     }
+        // }
+        .effect-32 {
+            a {
+                position: relative;
+                padding: 0;
+                z-index: 1;
+                &:hover {
+                    color: rgba(255, 255, 255, 0.6);
+                    // color: rgba(0, 115, 94, 1.0);
+                    -ms-animation: circleOpacity forwards 1s;
+                    -moz-animation: circleOpacity forwards 1s;
+                    -webkit-animation: circleOpacity forwards 1s;
+                    animation: circleOpacity forwards 1s;
+                }
+            }
+        }
+        @keyframes circleOpacity {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .effect-32 a:before, .effect-32 a:after {
+            position: absolute;
+            top: 0px;
+            left: 0;
+            content: "◯";
+            display: block;
+            width: 100%;
+            font-size: 0px;
+            color: rgba(255, 255, 255, 0.6);
+            // color: rgba(0, 115, 94, 0.6);
+            text-align: center;
+            z-index: -1;
+        }
+        .effect-32 a:hover:before {
+            animation: circledrop 1s;
+            -ms-animation: circledrop 1s;
+            -moz-animation: circledrop 1s;
+            -webkit-animation: circledrop 1s;
+        }
+        .effect-32 a:hover::after {
+            animation: circledrop 1s 0.5s;
+            -ms-animation: circledrop 1s 0.5s;
+            -moz-animation: circledrop 1s 0.5s;
+            -webkit-animation: circledrop 1s 0.5s;
+        }
+        @keyframes circledrop {
+            0% {
+                opacity: 1;
+                font-size: 0;
+                top: 0;
+            }
+            100% {
+                opacity: 0;
+                font-size: 80px;
+                top: -50px;
+            }
+        }
         .bwLangBtn {
             position: relative;
             .langBtn {
@@ -238,6 +344,19 @@ main {
             border-radius: 0.4rem;
             padding: 0.6rem 1.2rem;
         }
+        .effect-32 {
+            a {
+                position: relative;
+                padding: 0;
+                z-index: 1;
+                &:hover {
+                    color: rgba(0, 115, 94, 1.0);
+                }
+            }
+        }
+        .effect-32 a:before, .effect-32 a:after {
+        color: rgba(0, 115, 94, 0.6);
+        }
     }
     .wrSbHeader {
         .flex-container {
@@ -399,23 +518,33 @@ main {
                 object-fit: cover;
             }
         }
-        .banner-prev, .banner-next{
-            width: 5.2rem;
-            height: 5.2rem;
-            background-color: transparent;
-            border: 1px solid $main;
-            border-radius: 100%;
-            mask: url('/GFCKorea/images/arrow.svg') no-repeat center;
-            -webkit-mask: url('/GFCKorea/images/arrow.svg') no-repeat center;
-            mask-size: 50%;
-            -webkit-mask-size: 50%;
-            &::after {
-                content: none;
+        .banner-prev {
+            .banner-icon {
+                display: block;
+                width: 40px;
+                height: 40px;
+                background-image: url('/GFCKorea/images/prev.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                transition: background-image 0.3s ease;
+                &:hover {
+                    background-image: url('/GFCKorea/images/prev_active.svg');
+                }
             }
-            &:hover {
-                background-color: $main;
-                
-            }        
+        }
+        .banner-next {
+            .banner-icon {
+                display: block;
+                width: 40px;
+                height: 40px;
+                background-image: url('/GFCKorea/images/next.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                transition: background-image 0.3s ease;
+                &:hover {
+                    background-image: url('/GFCKorea/images/next_active.svg');
+                }
+            }
         }
         .flex {
             justify-content: space-between;
@@ -423,8 +552,7 @@ main {
         .swiper-btn-box {
             position: relative;
             display: flex;
-            gap: 2rem; /* 버튼 간 간격 */
-            border: 1px solid red;
+            gap: 4rem; /* 버튼 간 간격 */
             .banner-prev,
             .banner-next {
                 position: relative;
@@ -436,8 +564,9 @@ main {
             }
         }
         .banner-prev {
-            transform: scaleX(-1);
-            position: absolute;
+            &::after {
+                content: none;
+            }
         }
         .banner-next {
             &::after {

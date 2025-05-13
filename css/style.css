@@ -15,7 +15,7 @@
   letter-spacing: -2px;
 }
 .main-tit_sb {
-  color: #555;
+  color: #95999C;
   font-size: 3rem;
 }
 .main-tit b {
@@ -51,6 +51,10 @@
 }
 
 .current-page {
+  color: #00735E;
+}
+
+.current-page_sb {
   color: #00735E;
   border-bottom: #00735E 5px solid;
 }
@@ -221,11 +225,27 @@
   padding: 12rem 0;
 }
 
-.table {
-  border-spacing: 1rem;
+.table-wrap {
+  display: block;
+  padding: 1rem;
 }
-.table tr, .table th {
+
+.table {
+  width: 70%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-spacing: 1rem;
+  table-layout: fixed;
+}
+.table th, .table td {
   padding: 0.8rem 1.5rem;
+  text-align: center;
+}
+.table th:first-child, .table td:first-child {
+  width: 60%;
+}
+.table th:last-child, .table td:last-child {
+  width: 40%;
 }
 .table_cate {
   color: #fff;
@@ -249,6 +269,12 @@
   border-radius: 1.5rem;
   padding: 1.6rem 6.6rem;
   text-align: center;
+  transition: background-color 0.5s ease, color 0.5s ease, font-weight 0.3s ease;
+}
+.btn-long:hover {
+  background-color: #004034;
+  color: white;
+  font-weight: bold;
 }
 
 .section img {
@@ -263,6 +289,7 @@
 }
 .card-grid .card-grid_itm {
   perspective: 1000px;
+  cursor: pointer;
 }
 .card-grid .card-grid_itm__inner {
   position: relative;
@@ -366,6 +393,59 @@ body {
 }
 #wrHeader .bwContents {
   height: 100%;
+}
+#wrHeader .bwContents .effect-32 a {
+  position: relative;
+  padding: 0;
+  z-index: 1;
+}
+#wrHeader .bwContents .effect-32 a:hover {
+  color: rgba(255, 255, 255, 0.6);
+  animation: circleOpacity forwards 1s;
+}
+@keyframes circleOpacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#wrHeader .bwContents .effect-32 a:before, #wrHeader .bwContents .effect-32 a:after {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  content: "◯";
+  display: block;
+  width: 100%;
+  font-size: 0px;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  z-index: -1;
+}
+#wrHeader .bwContents .effect-32 a:hover:before {
+  animation: circledrop 1s;
+  -ms-animation: circledrop 1s;
+  -moz-animation: circledrop 1s;
+  -webkit-animation: circledrop 1s;
+}
+#wrHeader .bwContents .effect-32 a:hover::after {
+  animation: circledrop 1s 0.5s;
+  -ms-animation: circledrop 1s 0.5s;
+  -moz-animation: circledrop 1s 0.5s;
+  -webkit-animation: circledrop 1s 0.5s;
+}
+@keyframes circledrop {
+  0% {
+    opacity: 1;
+    font-size: 0;
+    top: 0;
+  }
+  100% {
+    opacity: 0;
+    font-size: 80px;
+    top: -50px;
+  }
 }
 #wrHeader .bwContents .bwLangBtn {
   position: relative;
@@ -546,6 +626,17 @@ main #bwSbBanner .bxSbBanner .btn {
   background-color: rgba(157, 157, 157, 0.15);
   border-radius: 0.4rem;
   padding: 0.6rem 1.2rem;
+}
+#sbWrap #wrHeader .effect-32 a {
+  position: relative;
+  padding: 0;
+  z-index: 1;
+}
+#sbWrap #wrHeader .effect-32 a:hover {
+  color: rgb(0, 115, 94);
+}
+#sbWrap #wrHeader .effect-32 a:before, #sbWrap #wrHeader .effect-32 a:after {
+  color: rgba(0, 115, 94, 0.6);
 }
 #sbWrap .wrSbHeader .flex-container {
   display: flex;
@@ -733,22 +824,29 @@ main #bwSbBanner .bxSbBanner .btn {
   -o-object-fit: cover;
      object-fit: cover;
 }
-#sbWrap .section04 .banner-prev, #sbWrap .section04 .banner-next {
-  width: 5.2rem;
-  height: 5.2rem;
-  background-color: transparent;
-  border: 1px solid #00735E;
-  border-radius: 100%;
-  mask: url("/GFCKorea/images/arrow.svg") no-repeat center;
-  -webkit-mask: url("/GFCKorea/images/arrow.svg") no-repeat center;
-  mask-size: 50%;
-  -webkit-mask-size: 50%;
+#sbWrap .section04 .banner-prev .banner-icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-image: url("/GFCKorea/images/prev.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: background-image 0.3s ease;
 }
-#sbWrap .section04 .banner-prev::after, #sbWrap .section04 .banner-next::after {
-  content: none;
+#sbWrap .section04 .banner-prev .banner-icon:hover {
+  background-image: url("/GFCKorea/images/prev_active.svg");
 }
-#sbWrap .section04 .banner-prev:hover, #sbWrap .section04 .banner-next:hover {
-  background-color: #00735E;
+#sbWrap .section04 .banner-next .banner-icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-image: url("/GFCKorea/images/next.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: background-image 0.3s ease;
+}
+#sbWrap .section04 .banner-next .banner-icon:hover {
+  background-image: url("/GFCKorea/images/next_active.svg");
 }
 #sbWrap .section04 .flex {
   justify-content: space-between;
@@ -756,8 +854,7 @@ main #bwSbBanner .bxSbBanner .btn {
 #sbWrap .section04 .swiper-btn-box {
   position: relative;
   display: flex;
-  gap: 2rem; /* 버튼 간 간격 */
-  border: 1px solid red;
+  gap: 4rem; /* 버튼 간 간격 */
 }
 #sbWrap .section04 .swiper-btn-box .banner-prev,
 #sbWrap .section04 .swiper-btn-box .banner-next {
@@ -768,9 +865,8 @@ main #bwSbBanner .bxSbBanner .btn {
   justify-content: center;
   align-items: center;
 }
-#sbWrap .section04 .banner-prev {
-  transform: scaleX(-1);
-  position: absolute;
+#sbWrap .section04 .banner-prev::after {
+  content: none;
 }
 #sbWrap .section04 .banner-next::after {
   content: none;

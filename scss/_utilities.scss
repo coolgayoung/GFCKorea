@@ -265,5 +265,10 @@
             font-size: 1.6rem;
             font-weight: 300;
         }
+    }
+    @media screen and (max-width: $mobile) {
+        body {
+            font-size: 1.8rem;
+        } 
     }    
 }

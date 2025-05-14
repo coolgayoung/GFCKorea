@@ -429,6 +429,19 @@ main {
                 &:nth-child(7) {transform: rotate(341deg) translate(50rem) rotate(-341deg);}
             }
         }
+        @media screen and (max-width: $mobile) {
+            .text-img {
+            position: absolute;
+            width: 100rem;
+            > span {
+                font-size: 2.3rem;
+            }
+            > img {
+                width: 70%;
+                height: auto;
+            }
+        }
+        }
     }
     .section02 {
         background-color: #F5F9F9;
@@ -608,9 +621,11 @@ main {
 .product-sb {
     .flex-container {
         position: relative;
+        &_img {
+            width: 100%;
+        }
         &_itm {
             position: absolute;
-
             color: $sub;
             font-size: 2.5rem;
             &.left {
@@ -628,6 +643,14 @@ main {
                 left: 50%;
                 transform: translateX(-50%);
                 text-align: center;
+            }
+        }
+        @media screen and (max-width: $mobile) {
+            &_img {
+                width: 80%;
+            }
+            &_itm {
+            font-size: 1.8rem;
             }
         }
     }

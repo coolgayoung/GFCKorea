@@ -400,30 +400,14 @@ main {
     #bwSbMainVisual {
         background: url('/GFCKorea/images/sbMainVisualBg.jpg') center top no-repeat;
     }
-    .bwSbMainVisual {
-        .main-tit {
-            padding-top: 24.4rem;
-            
-            #typed {
-                /*border-right: 2px solid #00BFFF; */
-                // animation: blink 0.7s infinite;
-                white-space: nowrap;
-                overflow: hidden;
-                display: inline-block;
-            }
-
-            @keyframes blink {
-                0%, 100% { border-color: transparent; }
-                50% { border-color: #00BFFF; }
-            }
-            &_sb1 {
-                padding-bottom: 22.3rem;
-            }
-        }
-    }
     .section01 {
         .layout-circle {
             @include mixin-flex(row, center, center);
+                @media screen and (max-width: $tablet) {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
             &_itm {
                 @include mixin-circle-3{
                     padding: 13rem;
@@ -492,6 +476,9 @@ main {
     .section02 {
         background-color: #F5F9F9;
         .grid-container {
+            @media screen and (max-width: $tablet) {
+                grid-template-columns: 1fr;
+            }
             &_itm {
                 @include mixin-flex(row, center, center);
             }
@@ -511,6 +498,16 @@ main {
             }
             .box2 {
                 grid-column: span 1;
+            }
+            @media screen and (max-width: $mobile) {
+                .grid-container {
+                    &_itm {
+                        flex-direction: column;
+                    }
+                }
+                .flex-container {
+                    flex-direction: column;
+                }
             }
         }
         #chart {
@@ -532,6 +529,9 @@ main {
         }
         .bwRollingBanner {
             padding-left: 50rem;
+            @media screen and (max-width: $tablet) {
+                padding-left: 10rem;
+            }
         }
         .bxSbBanner {
             display: flex;
@@ -544,6 +544,9 @@ main {
             position: relative;
             width: 36rem;
             height: 43rem;
+            @media screen and (max-width: $tablet) {
+                padding-top: 3rem;
+            }
             img {
                 width: 100%;
                 height: 100%;
@@ -618,6 +621,9 @@ main {
             .bxList {
                 width: 35%;
                 margin-right: 3rem;
+                @media screen and (max-width: $mobile) {
+                    width: 100%;
+                }
             }
             .locate_map {
                 width: 40%;
@@ -626,13 +632,19 @@ main {
                 }
             }
         }
-    }
-    .flex-container {
-        &_img {
-            position: relative;
-        }
-        &_itm {
-            display: inline-block;
+        @media screen and (max-width: $mobile) {
+            .locate-wrap.flex-container {
+                flex-direction: column;
+            }
+            .flex-container {
+                .bxList {
+                    width: 100%;
+                }
+                .locate_map {
+                    padding-top: 10rem;
+                    width: 100%;
+                }
+            }
         }
     }
 }
@@ -777,6 +789,14 @@ main {
         };
         padding-left: 10rem;
         position: relative;
+        @media screen and (max-width: $mobile) {
+            @include mixin-flex (column, center, center){
+
+            }
+            text-align: center;
+            padding-left: 0;
+            padding-bottom: 10rem;
+        }
         // hover 효과
         &:hover {
             .box-text {
@@ -814,6 +834,21 @@ main {
             color: $sub2;
             font-size: 3rem;
             transition: color 0.3s ease-in-out;
+        }
+    }
+    @media screen and (max-width: $mobile) {
+        .num {
+            font-size: 13rem;
+        }
+        .box-text {
+            @include mixin-flex(column, center, center);
+            line-height: 1.6;
+            &_bold {
+                font-size: 2.8rem;
+            }
+            &_detail {
+                font-size: 2.2rem;
+            }
         }
     }
 }

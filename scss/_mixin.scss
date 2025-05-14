@@ -47,6 +47,9 @@
     gap: $gap;
     padding: $padding;
     @content;
+    @media screen and (max-width: $tablet) {
+        grid-template-columns: repeat(1, 1fr);    
+    }
 }
 
 @mixin mixin-flex ($fd: row, $jc: center, $ai: center) {
@@ -55,6 +58,9 @@
     justify-content: $jc;
     align-items: $ai;
     @content;
+    // @media screen and (max-width: $tablet) {
+    //     flex-direction: column;
+    // }
 }
 
 @mixin mixin-btn ($bg: $main, $col: #fff){
@@ -69,6 +75,9 @@
     font-size: 5rem;
     font-weight: bold;
     @content;
+    @media screen and (max-width: $mobile) {
+        font-size: 3.25rem;
+    }
 }
 
 @mixin mixin-circle-3 {
@@ -78,4 +87,8 @@
     text-align: center;
     background : url('/GFCKorea/images/bg_circle.svg') center no-repeat;
     @content;
+    @media screen and (max-width: $mobile) {
+        font-size: 2.5rem;
+        background-size: 80%;
+    }
 }

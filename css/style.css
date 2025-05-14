@@ -13,19 +13,47 @@
   font-size: 5rem;
   font-weight: 300;
   letter-spacing: -2px;
+  padding-top: 24.4rem;
+}
+@media screen and (max-width: 768px) {
+  .main-tit {
+    font-size: 3.25rem;
+    padding-top: 20rem;
+  }
 }
 .main-tit_sb {
   color: #555;
   font-size: 3rem;
 }
+@media screen and (max-width: 768px) {
+  .main-tit_sb {
+    font-size: 2rem;
+  }
+}
 .main-tit_sb1 {
   color: #95999C;
   font-size: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 22.3rem;
+}
+@media screen and (max-width: 768px) {
+  .main-tit_sb1 {
+    font-size: 2.5rem;
+    padding-bottom: 18rem;
+  }
 }
 .main-tit_sb2 {
   color: #615f5f;
   font-size: 3rem;
+  padding-left: 27rem;
   line-height: 1.6;
+  word-break: keep-all;
+}
+@media screen and (max-width: 768px) {
+  .main-tit_sb2 {
+    font-size: 1.8rem;
+    padding-left: 3rem;
+  }
 }
 .main-tit b {
   font-weight: bold;
@@ -44,6 +72,11 @@
   font-weight: 500;
   padding-top: 14.5rem;
 }
+@media screen and (max-width: 768px) {
+  .sb-tit {
+    font-size: 2rem;
+  }
+}
 
 .tit {
   color: #222;
@@ -51,11 +84,26 @@
   font-weight: bold;
   padding-bottom: 4rem;
 }
+@media screen and (max-width: 768px) {
+  .tit {
+    font-size: 3.25rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .tit {
+    padding-bottom: 2rem;
+  }
+}
 
 #sbWrap .tit {
   color: #222;
   font-size: 5rem;
   font-weight: bold;
+}
+@media screen and (max-width: 768px) {
+  #sbWrap .tit {
+    font-size: 3.25rem;
+  }
 }
 
 .current-page {
@@ -294,6 +342,11 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   padding: 2rem;
+}
+@media screen and (max-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 .card-grid .card-grid_itm {
   perspective: 1000px;
@@ -692,31 +745,18 @@ main #bwSbBanner .bxSbBanner .btn {
 #sbWrap #bwSbMainVisual {
   background: url("/GFCKorea/images/sbMainVisualBg.jpg") center top no-repeat;
 }
-#sbWrap .bwSbMainVisual .main-tit {
-  padding-top: 24.4rem;
-}
-#sbWrap .bwSbMainVisual .main-tit #typed {
-  /*border-right: 2px solid #00BFFF; */
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
-}
-@keyframes blink {
-  0%, 100% {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #00BFFF;
-  }
-}
-#sbWrap .bwSbMainVisual .main-tit_sb1 {
-  padding-bottom: 22.3rem;
-}
 #sbWrap .section01 .layout-circle {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+@media screen and (max-width: 1024px) {
+  #sbWrap .section01 .layout-circle {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
 }
 #sbWrap .section01 .layout-circle_itm {
   flex-grow: 1;
@@ -725,6 +765,12 @@ main #bwSbBanner .bxSbBanner .btn {
   text-align: center;
   background: url("/GFCKorea/images/bg_circle.svg") center no-repeat;
   padding: 13rem;
+}
+@media screen and (max-width: 768px) {
+  #sbWrap .section01 .layout-circle_itm {
+    font-size: 2.5rem;
+    background-size: 80%;
+  }
 }
 #sbWrap .section01 .flex-container {
   position: relative;
@@ -807,6 +853,11 @@ main #bwSbBanner .bxSbBanner .btn {
   grid-template-rows: repeat(2, 1fr);
   gap: 2rem;
 }
+@media screen and (max-width: 1024px) {
+  #sbWrap .section02 .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
 #sbWrap .section02 .grid-container_itm {
   display: flex;
   flex-direction: row;
@@ -830,6 +881,14 @@ main #bwSbBanner .bxSbBanner .btn {
 #sbWrap .section02 .grid-container .box2 {
   grid-column: span 1;
 }
+@media screen and (max-width: 768px) {
+  #sbWrap .section02 .grid-container .grid-container_itm {
+    flex-direction: column;
+  }
+  #sbWrap .section02 .grid-container .flex-container {
+    flex-direction: column;
+  }
+}
 #sbWrap .section02 #chart {
   max-width: 380px;
   margin: 0 auto;
@@ -850,6 +909,11 @@ main #bwSbBanner .bxSbBanner .btn {
 #sbWrap .section04 .bwRollingBanner {
   padding-left: 50rem;
 }
+@media screen and (max-width: 1024px) {
+  #sbWrap .section04 .bwRollingBanner {
+    padding-left: 10rem;
+  }
+}
 #sbWrap .section04 .bxSbBanner {
   display: flex;
   align-items: center;
@@ -861,6 +925,11 @@ main #bwSbBanner .bxSbBanner .btn {
   position: relative;
   width: 36rem;
   height: 43rem;
+}
+@media screen and (max-width: 1024px) {
+  #sbWrap .section04 .swiper-slide {
+    padding-top: 3rem;
+  }
 }
 #sbWrap .section04 .swiper-slide img {
   width: 100%;
@@ -930,17 +999,28 @@ main #bwSbBanner .bxSbBanner .btn {
   width: 35%;
   margin-right: 3rem;
 }
+@media screen and (max-width: 768px) {
+  #sbWrap .section05 .flex-container .bxList {
+    width: 100%;
+  }
+}
 #sbWrap .section05 .flex-container .locate_map {
   width: 40%;
 }
 #sbWrap .section05 .flex-container .locate_map__itm {
   border-radius: 0 0 10rem 0;
 }
-#sbWrap .flex-container_img {
-  position: relative;
-}
-#sbWrap .flex-container_itm {
-  display: inline-block;
+@media screen and (max-width: 768px) {
+  #sbWrap .section05 .locate-wrap.flex-container {
+    flex-direction: column;
+  }
+  #sbWrap .section05 .flex-container .bxList {
+    width: 100%;
+  }
+  #sbWrap .section05 .flex-container .locate_map {
+    padding-top: 10rem;
+    width: 100%;
+  }
 }
 
 .product-sb .flex-container {
@@ -1263,6 +1343,17 @@ main #bwSbBanner .bxSbBanner .btn {
   padding-left: 10rem;
   position: relative;
 }
+@media screen and (max-width: 768px) {
+  .custom-list li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-left: 0;
+    padding-bottom: 10rem;
+  }
+}
 .custom-list li:hover .box-text {
   transform: translateX(1rem);
   opacity: 0.9;
@@ -1299,6 +1390,24 @@ main #bwSbBanner .bxSbBanner .btn {
   color: #595959;
   font-size: 3rem;
   transition: color 0.3s ease-in-out;
+}
+@media screen and (max-width: 768px) {
+  .custom-list .num {
+    font-size: 13rem;
+  }
+  .custom-list .box-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.6;
+  }
+  .custom-list .box-text_bold {
+    font-size: 2.8rem;
+  }
+  .custom-list .box-text_detail {
+    font-size: 2.2rem;
+  }
 }
 
 @media (max-width: 1024px) {

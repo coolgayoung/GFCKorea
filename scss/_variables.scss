@@ -4,23 +4,45 @@ $sub1 : #adadad;
 $sub2 : #595959;
 $detail : #95999C;
 $bg-blk : #222;
+$mobile: 768px;
+$tablet: 1024px;
 .main-tit {
     color: #fff;
     font-size: 5rem;
     font-weight: 300;
     letter-spacing: -2px;
+    padding-top: 24.4rem;
+    @media screen and (max-width: $mobile) {
+        font-size: 3.25rem;
+        padding-top: 20rem;
+    }
     &_sb {
         color: $sub;
         font-size: 3rem;
+        @media screen and (max-width: $mobile) {
+            font-size: 2rem;
+        }
     }
     &_sb1 {
         color: $detail;
         font-size: 3rem;
+        padding-top: 2rem;
+        padding-bottom: 22.3rem;
+        @media screen and (max-width: $mobile) {
+            font-size: 2.5rem;
+            padding-bottom: 18rem;
+        }
     }
     &_sb2 {
         color: #615f5f;
         font-size: 3rem;
+        padding-left: 27rem;
         line-height: 1.6;
+        word-break: keep-all;
+        @media screen and (max-width: $mobile) {
+            font-size: 1.8rem;
+            padding-left: 3rem;
+        }
     }
     b {
         font-weight: bold;
@@ -38,11 +60,17 @@ $bg-blk : #222;
     font-size: 2.8rem;
     font-weight: 500;
     padding-top: 14.5rem;
+    @media screen and (max-width: $mobile) {
+    font-size: 2rem;
+    }
 }
 
 .tit {
     @include mixin-tit;
     padding-bottom: 4rem;
+    @media screen and (max-width: $mobile) {
+        padding-bottom: 2rem;
+    }
 }
 
 #sbWrap {

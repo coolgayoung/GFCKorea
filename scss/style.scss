@@ -205,7 +205,14 @@ body {
     box-shadow: 15px 15px 30px 4px #CECECE;
     .rollingBannerItm {
         height: 100%;
-        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
     }
     .bxRollingBanner {
         .rollingBanner {
@@ -213,7 +220,34 @@ body {
             height: 100%;
             .swiper-wrapper {
                 height: 100%;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
             }
+        }
+    }
+    // 반응형 스타일
+    @media (max-width: 1024px) {
+        height: 120px;
+    }
+
+    @media (max-width: 768px) {
+        height: 100px;
+
+        .swiper-wrapper {
+            gap: 0.5rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        height: 80px;
+
+        .rollingBannerItm img {
+            max-height: 40px;
+        }
+
+        .swiper-wrapper {
+            gap: 0.3rem;
         }
     }
 }
@@ -780,6 +814,124 @@ main {
             color: $sub2;
             font-size: 3rem;
             transition: color 0.3s ease-in-out;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .section02 .article-1 .flex-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .section02 .article-1 .flex-container_itm {
+        width: 48% !important;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .grid-container {
+        grid-template-columns: 1fr !important;
+    }
+
+    .section02 .article-1 .flex-container_itm {
+        width: 100% !important;
+    }
+
+    .section02 .article-2 .card {
+        width: 100% !important;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .section02 .article-2 .flex-container {
+        flex-wrap: wrap;
+        gap: 4rem;
+
+        .card {
+            width: 48%;
+            height: auto;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .section02 .article-2 .flex-container {
+        flex-direction: column;
+        gap: 3rem;
+
+        .card {
+            width: 100%;
+            height: auto;
+            &_tit {
+                font-size: 2.2rem;
+            }
+
+            &_desc {
+                font-size: 1.6rem;
+            }
+
+            &_btn {
+                font-size: 1.6rem;
+
+                &__img {
+                width: 1.8rem;
+                height: auto;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    #wrFooter {
+        .layoutCenter {
+            padding: 2rem;
+            gap: 2rem;
+        }
+
+        .bwMenuFooter,
+        .bwInfoFooter {
+            flex-direction: column;
+            gap: 0.8rem;
+
+            li, a {
+                font-size: 1.6rem;
+                line-height: 1.4;
+            }
+        }
+
+        .text-gray-500 {
+            font-size: 1.4rem;
+            display: block;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    #wrFooter {
+        .bwLogoFooter {
+            text-align: center;
+
+            img {
+                margin: 0 auto;
+                max-width: 160px;
+            }
+        }
+
+        .bwMenuFooter,
+        .bwInfoFooter {
+            align-items: center;
+            text-align: center;
         }
     }
 }

@@ -501,6 +501,15 @@ body {
 }
 #bwRollingBanner .rollingBannerItm {
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#bwRollingBanner .rollingBannerItm img {
+  height: 100%;
+  width: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 #bwRollingBanner .bxRollingBanner .rollingBanner {
   overflow: hidden;
@@ -508,6 +517,33 @@ body {
 }
 #bwRollingBanner .bxRollingBanner .rollingBanner .swiper-wrapper {
   height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+@media (max-width: 1024px) {
+  #bwRollingBanner {
+    height: 120px;
+  }
+}
+@media (max-width: 768px) {
+  #bwRollingBanner {
+    height: 100px;
+  }
+  #bwRollingBanner .swiper-wrapper {
+    gap: 0.5rem;
+  }
+}
+@media (max-width: 480px) {
+  #bwRollingBanner {
+    height: 80px;
+  }
+  #bwRollingBanner .rollingBannerItm img {
+    max-height: 40px;
+  }
+  #bwRollingBanner .swiper-wrapper {
+    gap: 0.3rem;
+  }
 }
 
 main .section01 {
@@ -1263,4 +1299,101 @@ main #bwSbBanner .bxSbBanner .btn {
   color: #595959;
   font-size: 3rem;
   transition: color 0.3s ease-in-out;
+}
+
+@media (max-width: 1024px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .section02 .article-1 .flex-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .section02 .article-1 .flex-container_itm {
+    width: 48% !important;
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 640px) {
+  .grid-container {
+    grid-template-columns: 1fr !important;
+  }
+  .section02 .article-1 .flex-container_itm {
+    width: 100% !important;
+  }
+  .section02 .article-2 .card {
+    width: 100% !important;
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 1024px) {
+  .section02 .article-2 .flex-container {
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+  .section02 .article-2 .flex-container .card {
+    width: 48%;
+    height: auto;
+  }
+}
+@media (max-width: 768px) {
+  .section02 .article-2 .flex-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .section02 .article-2 .flex-container .card {
+    width: 100%;
+    height: auto;
+  }
+  .section02 .article-2 .flex-container .card_tit {
+    font-size: 2.2rem;
+  }
+  .section02 .article-2 .flex-container .card_desc {
+    font-size: 1.6rem;
+  }
+  .section02 .article-2 .flex-container .card_btn {
+    font-size: 1.6rem;
+  }
+  .section02 .article-2 .flex-container .card_btn__img {
+    width: 1.8rem;
+    height: auto;
+  }
+}
+@media (max-width: 1024px) {
+  #wrFooter .layoutCenter {
+    padding: 2rem;
+    gap: 2rem;
+  }
+  #wrFooter .bwMenuFooter,
+  #wrFooter .bwInfoFooter {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  #wrFooter .bwMenuFooter li, #wrFooter .bwMenuFooter a,
+  #wrFooter .bwInfoFooter li,
+  #wrFooter .bwInfoFooter a {
+    font-size: 1.6rem;
+    line-height: 1.4;
+  }
+  #wrFooter .text-gray-500 {
+    font-size: 1.4rem;
+    display: block;
+    text-align: center;
+  }
+}
+@media (max-width: 640px) {
+  #wrFooter .bwLogoFooter {
+    text-align: center;
+  }
+  #wrFooter .bwLogoFooter img {
+    margin: 0 auto;
+    max-width: 160px;
+  }
+  #wrFooter .bwMenuFooter,
+  #wrFooter .bwInfoFooter {
+    align-items: center;
+    text-align: center;
+  }
 }

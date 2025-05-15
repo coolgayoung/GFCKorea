@@ -640,11 +640,13 @@ body {
 }
 @media (max-width: 1024px) {
   #bwRollingBanner {
+    width: 120%;
     height: 120px;
   }
 }
 @media (max-width: 768px) {
   #bwRollingBanner {
+    width: 130%;
     height: 100px;
   }
   #bwRollingBanner .swiper-wrapper {

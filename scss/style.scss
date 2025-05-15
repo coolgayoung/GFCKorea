@@ -306,15 +306,17 @@ main {
     .section01 {
         .layout-circle {
             @include mixin-flex(row, center, center);
-                @media screen and (max-width: $tablet) {
-                flex-direction: column;
-                align-items: center;
-                gap: 30px;
-            }
             &_itm {
                 @include mixin-circle-3{
                     padding: 13rem;
                 };
+            }
+            @media screen and (max-width: $tablet) {
+            align-items: center;
+            gap: 30px;
+            &_itm { 
+                padding: 5rem;
+            }
             }
         }
         .flex-container {

@@ -820,25 +820,32 @@ main #bwSbBanner .bxSbBanner .btn {
   justify-content: center;
   align-items: center;
 }
-@media screen and (max-width: 1024px) {
-  #sbWrap .section01 .layout-circle {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-}
 #sbWrap .section01 .layout-circle_itm {
   flex-grow: 1;
   color: #fff;
   font-size: 3.6rem;
   text-align: center;
   background: url("/GFCKorea/images/bg_circle.svg") center no-repeat;
+  background-size: contain;
   padding: 13rem;
+}
+@media screen and (max-width: 1024px) {
+  #sbWrap .section01 .layout-circle_itm {
+    font-size: 2.1rem;
+  }
 }
 @media screen and (max-width: 768px) {
   #sbWrap .section01 .layout-circle_itm {
-    font-size: 2.5rem;
-    background-size: 80%;
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #sbWrap .section01 .layout-circle {
+    align-items: center;
+    gap: 30px;
+  }
+  #sbWrap .section01 .layout-circle_itm {
+    padding: 5rem;
   }
 }
 #sbWrap .section01 .flex-container {

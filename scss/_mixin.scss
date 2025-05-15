@@ -58,9 +58,9 @@
     justify-content: $jc;
     align-items: $ai;
     @content;
-    // @media screen and (max-width: $tablet) {
-    //     flex-direction: column;
-    // }
+    @media screen and (max-width: $mobile) {
+        // gap: 2rem;
+    }
 }
 
 @mixin mixin-btn ($bg: $main, $col: #fff){

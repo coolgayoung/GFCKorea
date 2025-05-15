@@ -145,6 +145,100 @@
   }
 }
 
+.effect-32 a {
+  position: relative;
+  padding: 0;
+  z-index: 1;
+}
+.effect-32 a:hover {
+  color: rgba(255, 255, 255, 0.6);
+  animation: circleOpacity forwards 1s;
+}
+
+@keyframes circleOpacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.effect-32 a:before, .effect-32 a:after {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  content: "◯";
+  display: block;
+  width: 100%;
+  font-size: 0px;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  z-index: -1;
+}
+
+.effect-32 a:hover:before, .effect-32 a:active:before {
+  animation: circledrop 1s;
+  -ms-animation: circledrop 1s;
+  -moz-animation: circledrop 1s;
+  -webkit-animation: circledrop 1s;
+}
+
+.effect-32 a:hover::after, .effect-32 a:active::after {
+  animation: circledrop 1s 0.5s;
+  -ms-animation: circledrop 1s 0.5s;
+  -moz-animation: circledrop 1s 0.5s;
+  -webkit-animation: circledrop 1s 0.5s;
+}
+
+@keyframes circledrop {
+  0% {
+    opacity: 1;
+    font-size: 0;
+    top: 0;
+  }
+  100% {
+    opacity: 0;
+    font-size: 80px;
+    top: -50px;
+  }
+}
+.effect-45 a {
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+  transition-property: color;
+  transition-duration: 0.3s;
+}
+
+.effect-45 a:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 100%;
+  transform: scale(0);
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+
+.effect-45 a:hover, .effect-45 a:focus, .effect-45 a:active {
+  color: #27ae60;
+}
+
+.effect-45 a:hover:before, .effect-45 a:focus:before, .effect-45 a:active:before {
+  transform: scale(2);
+}
+
+#mobileMenuBtn, #mobileMenuClose {
+  cursor: pointer;
+}
+
 .blind {
   position: absolute;
   width: 1px;
@@ -473,59 +567,6 @@ body {
 #wrHeader .bwContents {
   height: 100%;
 }
-#wrHeader .bwContents .effect-32 a {
-  position: relative;
-  padding: 0;
-  z-index: 1;
-}
-#wrHeader .bwContents .effect-32 a:hover {
-  color: rgba(255, 255, 255, 0.6);
-  animation: circleOpacity forwards 1s;
-}
-@keyframes circleOpacity {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-#wrHeader .bwContents .effect-32 a:before, #wrHeader .bwContents .effect-32 a:after {
-  position: absolute;
-  top: 0px;
-  left: 0;
-  content: "◯";
-  display: block;
-  width: 100%;
-  font-size: 0px;
-  color: rgba(255, 255, 255, 0.6);
-  text-align: center;
-  z-index: -1;
-}
-#wrHeader .bwContents .effect-32 a:hover:before {
-  animation: circledrop 1s;
-  -ms-animation: circledrop 1s;
-  -moz-animation: circledrop 1s;
-  -webkit-animation: circledrop 1s;
-}
-#wrHeader .bwContents .effect-32 a:hover::after {
-  animation: circledrop 1s 0.5s;
-  -ms-animation: circledrop 1s 0.5s;
-  -moz-animation: circledrop 1s 0.5s;
-  -webkit-animation: circledrop 1s 0.5s;
-}
-@keyframes circledrop {
-  0% {
-    opacity: 1;
-    font-size: 0;
-    top: 0;
-  }
-  100% {
-    opacity: 0;
-    font-size: 80px;
-    top: -50px;
-  }
-}
 #wrHeader .bwContents .bwLangBtn {
   position: relative;
 }
@@ -660,6 +701,11 @@ main .section02 .article-1 .flex-container {
 main .section02 .article-1 .flex-container_itm {
   width: 25%;
   height: 28rem;
+}
+@media screen and (max-width: 768px) {
+  main .section02 .article-1 .flex-container {
+    gap: 2rem;
+  }
 }
 main .section02 .article-1 .cont-box_itm {
   display: flex;
@@ -867,17 +913,48 @@ main #bwSbBanner .bxSbBanner .btn {
 #sbWrap .section01 .circle-menu_itm:nth-child(7) {
   transform: rotate(341deg) translate(50rem) rotate(-341deg);
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
+  #sbWrap .section01 .circle-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 2rem 0;
+  }
+  #sbWrap .section01 .circle-menu_itm {
+    font-size: 2rem;
+    position: static;
+    transform: none !important;
+    margin: 1rem;
+    width: auto;
+    height: auto;
+  }
   #sbWrap .section01 .text-img {
-    position: absolute;
-    width: 100rem;
+    position: relative;
+    width: 100%;
+    top: auto;
+    left: auto;
+    transform: none;
   }
   #sbWrap .section01 .text-img > span {
-    font-size: 2.3rem;
+    position: relative;
+    font-size: 2rem;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-bottom: 1.5rem;
   }
   #sbWrap .section01 .text-img > img {
-    width: 70%;
+    width: 80%;
+    margin: 0 auto;
+  }
+  #sbWrap .section01 .flex-container {
+    flex-direction: column;
     height: auto;
+    padding: 2rem 0;
   }
 }
 #sbWrap .section02 {
@@ -1065,35 +1142,6 @@ main #bwSbBanner .bxSbBanner .btn {
 .product-sb .flex-container_img {
   width: 100%;
 }
-.product-sb .flex-container_itm {
-  position: absolute;
-  color: #555;
-  font-size: 2.5rem;
-}
-.product-sb .flex-container_itm.left {
-  top: 66%;
-  left: -14%;
-  transform: translateY(-50%);
-}
-.product-sb .flex-container_itm.right {
-  top: 55%;
-  right: -20%;
-  transform: translate(-50%);
-}
-.product-sb .flex-container_itm.bottom {
-  bottom: -20%;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-}
-@media screen and (max-width: 768px) {
-  .product-sb .flex-container_img {
-    width: 80%;
-  }
-  .product-sb .flex-container_itm {
-    font-size: 1.8rem;
-  }
-}
 
 .map-container {
   position: relative;
@@ -1118,6 +1166,12 @@ main #bwSbBanner .bxSbBanner .btn {
   z-index: 1;
   cursor: pointer;
 }
+@media screen and (max-width: 768px) {
+  .point {
+    width: 10px;
+    height: 10px;
+  }
+}
 
 .point:hover {
   background-color: #00c853;
@@ -1135,12 +1189,17 @@ main #bwSbBanner .bxSbBanner .btn {
   color: #333;
   padding: 3px 8px;
   border-radius: 12px;
-  font-size: 12px;
+  font-size: 1.2rem;
   white-space: nowrap;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   opacity: 0;
   animation: fadeIn 1s forwards;
   cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .label {
+    font-size: 1rem;
+  }
 }
 
 .label:hover {
@@ -1262,8 +1321,8 @@ main #bwSbBanner .bxSbBanner .btn {
 }
 
 .p1-label {
-  top: 20%;
-  left: 98%;
+  top: 7%;
+  left: 85%;
   animation-delay: 0.2s;
 }
 
@@ -1456,7 +1515,6 @@ main #bwSbBanner .bxSbBanner .btn {
     font-size: 2.2rem;
   }
 }
-
 @media (max-width: 1024px) {
   .grid-container {
     display: grid;
@@ -1465,7 +1523,6 @@ main #bwSbBanner .bxSbBanner .btn {
   }
   .section02 .article-1 .flex-container {
     flex-wrap: wrap;
-    justify-content: center;
   }
   .section02 .article-1 .flex-container_itm {
     width: 48% !important;

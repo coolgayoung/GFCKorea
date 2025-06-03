@@ -23,7 +23,12 @@
 }
 .main-tit_sb {
   color: #555;
-  font-size: 3rem;
+  font-size: 2.7rem;
+}
+@media screen and (max-width: 1024px) {
+  .main-tit_sb {
+    font-size: 2.5rem;
+  }
 }
 @media screen and (max-width: 768px) {
   .main-tit_sb {
@@ -61,7 +66,7 @@
 .main-tit__center {
   color: #fff;
   font-size: 5rem;
-  font-weight: 300;
+  font-weight: 600;
   letter-spacing: -2px;
   padding: 16rem 0;
 }
@@ -452,7 +457,15 @@
 }
 @media screen and (max-width: 1024px) {
   .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .card-grid {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .card-grid > *:nth-child(n+6) {
+    display: none;
   }
 }
 .card-grid .card-grid_itm {
@@ -1618,4 +1631,4 @@ main #bwSbBanner .bxSbBanner .btn {
     align-items: center;
     text-align: center;
   }
-}
+}/*# sourceMappingURL=style.css.map */
